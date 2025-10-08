@@ -1,0 +1,18 @@
+FROM node:20-alpine
+
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package*.json ./
+RUN npm ci
+
+#bring in source
+COPY . .
+
+# Expose port 3000 to the Docker host, so we can access it from the outside.
+EXPOSE 3000
+
+#nodemon is already in devDependencies
+CMD ["npm", "run", "dev"]
+
+HEALTHCHECK --interval=5s --timeout=2s --retries=12 CMD wget -qO- http://127.0.0.1:${PORT:-5000}/health || exit 1

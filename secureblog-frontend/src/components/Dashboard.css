@@ -1,0 +1,22 @@
+.dashboard-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.dashboard-container h1 {
+  margin-bottom: 15px;
+}
+
+.dashboard-container button {
+  padding: 10px 15px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
